@@ -1,27 +1,42 @@
 {
-  "name": "env-explorer",
-  "displayName": "Python Env Size Explorer",
-  "description": "Visualize Python package sizes and manage your environments with Undo support.",
+  "name": "python-env-size-explorer",
+  "displayName": "Python Env & Package Size Explorer", 
+  "description": "Visualize Python package sizes, manage multiple venvs, and bulk uninstall with Undo support.", 
   "version": "0.1.0",
-  "publisher": "your-id",
+  "publisher": "iida-nobuchiyo", 
+  "author": {
+    "name": "Nobuchiyo Iida"
+  },
+  "keywords": [
+    "python",
+    "venv",
+    "package",
+    "pip",
+    "size",
+    "virtual environment"
+  ], 
   "files": [
     "dist",
     "inspect_env.py",
     "images"
   ],
   "license": "MIT",
-  "icon": "images/icon.png",
+  "icon": "images/env_explorer.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/IDNBC/env-explorer"
   },
   "engines": {
-    "vscode": "^1.110.0"
+    "vscode": "^1.80.0" 
   },
   "categories": [
+    "Visualization",
+    "Programming Languages",
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onView:envExplorer"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {

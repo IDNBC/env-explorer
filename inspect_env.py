@@ -3,6 +3,8 @@ import json
 import sys
 from importlib import metadata
 
+site_packages = [p for p in sys.path if 'site-packages' in p]
+
 def get_dir_size(path):
     total = 0
     try:

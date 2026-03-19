@@ -1,71 +1,42 @@
-# env-explorer README
+# Python Env & Package Size Explorer 📦
 
-This is the README for your extension "env-explorer". After writing up a brief description, we recommend including the following sections.
+Visualize your Python package sizes and manage multiple virtual environments with ease. This extension helps you identify "heavy" packages and keep your development environment lean.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 📊 **Size Visualization**: See exactly how much disk space each package occupies.
+- 🏗️ **Smart Venv Creation**: Create virtual environments with custom names and your choice of Python version.
+- 🗑️ **Bulk Uninstall**: Select multiple packages and remove them all at once.
+- ↩️ **Multi-level Undo**: Accidentally deleted something? Restore your packages from the history stack.
+- 🐍 **Auto Detection**: Automatically detects all virtual environments within your workspace folder.
 
-For example if there is an image subfolder under your extension project workspace:
+## How to Use
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open a Python project folder.
+2. Click the **Python Env** (library icon) in the Activity Bar.
+3. Browse your global and virtual environments.
+4. Use the top menu icons to **Refresh**, **Create Venv**, or **Undo**.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 💡 Tips for Windows Users
+
+- **File Lock Notice**: Immediately after creating a `.venv`, VS Code or the Python extension may background-scan the folder. If you cannot move the folder to the Recycle Bin immediately, please wait a few seconds for the scan to complete.
+- **Refresh**: If the package list doesn't update immediately after a pip command, click the **Refresh** icon.
+
+## Screenshots
+
+![Package List](images/env-explorer_1.png)
+![Environment Management](images/env-explorer_2.png)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- VS Code 1.80.0+
+- Python 3.3+
+- [Microsoft Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (Recommended)
 
-## Extension Settings
+## Support & Feedback 🐛
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+If you find a bug or have a feature request, please open an issue on GitHub:
+👉 [GitHub Issues](https://github.com/IDNBC/env-explorer/issues)
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## License
+MIT
