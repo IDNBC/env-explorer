@@ -1,0 +1,77 @@
+{
+  "name": "env-explorer",
+  "displayName": "Python Env Size Explorer",
+  "description": "Visualize Python package sizes and manage your environments with Undo support.",
+  "version": "0.1.0",
+  "publisher": "your-id",
+  "files": [
+    "dist",
+    "inspect_env.py",
+    "images"
+  ],
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IDNBC/env-explorer"
+  },
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "python-env-manager-container",
+          "title": "Python Env",
+          "icon": "$(library)"
+        }
+      ]
+    },
+    "views": {
+      "python-env-manager-container": [
+        {
+          "id": "envExplorer",
+          "name": "Installed Packages",
+          "canSelectMany": true
+        }
+      ]
+    },
+    "commands": [
+      { "command": "env-explorer.refresh", "title": "Refresh", "icon": "$(refresh)" },
+      { "command": "env-explorer.createVenv", "title": "Create .venv", "icon": "$(add)" },
+      { "command": "env-explorer.bulkUninstall", "title": "Uninstall Selected", "icon": "$(trash)" },
+      { "command": "env-explorer.undoUninstall", "title": "Undo Last Uninstall", "icon": "$(discard)" }
+    ],
+    "menus": {
+      "view/title": [
+        { "command": "env-explorer.undoUninstall", "when": "view == envExplorer && env-explorer.canUndo", "group": "navigation@0" },
+        { "command": "env-explorer.createVenv", "when": "view == envExplorer", "group": "navigation@1" },
+        { "command": "env-explorer.bulkUninstall", "when": "view == envExplorer", "group": "navigation@2" },
+        { "command": "env-explorer.refresh", "when": "view == envExplorer", "group": "navigation@3" }
+      ],
+      "view/item/context": [
+        { "command": "env-explorer.bulkUninstall", "when": "view == envExplorer && viewItem == packageItem", "group": "inline" }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.110.0",
+    "@types/node": "22.x",
+    "typescript": "^5.9.3",
+    "esbuild": "^0.27.3",
+    "eslint": "^9.39.3"
+  }
+}
